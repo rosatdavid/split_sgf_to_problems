@@ -80,7 +80,7 @@ def split_problems(path, problem_indicator):
         current = open.pop()
         if current.properties["C"] and current.properties["C"][0].startswith(problem_indicator):
 
-            current.properties['C'] = current.properties['C'][0][len(problem_indicator):]
+            current.properties['C'] = [current.properties['C'][0][len(problem_indicator):]]
             currentProblem = current
             sgf = generate_sgf_from(currentProblem)
             return_sgfs.append(sgf)
